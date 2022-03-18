@@ -7,6 +7,7 @@ import {
   signInWithGooglePopup,
   signInWithGoogleRedirect,
 } from "../../utils/firebase/firebase.js";
+import SignUpForm from "../../components/sign-up-form/SignUpForm.jsx";
 
 const SignIn = () => {
   useEffect(async () => {
@@ -31,6 +32,7 @@ const SignIn = () => {
       <h1>Sign in Page</h1>
       <button onClick={logGoogleUser}>Sign in with Google Popup</button>
       <button onClick={signInWithGoogleRedirect}>Sign in with Google Redirect</button>
+      <SignUpForm />
     </>
   );
 };
