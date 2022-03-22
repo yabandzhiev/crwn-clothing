@@ -3,10 +3,7 @@ import Authentication from "./routes/auth/Authentication.jsx";
 
 import Home from "./routes/home/Home.jsx";
 import Navigation from "./routes/navigation/Navigation.jsx";
-
-const Shop = () => {
-  return <h1>I am the shop page</h1>;
-};
+import Shop from "./routes/shop/Shop.jsx";
 
 const App = () => {
   return (
