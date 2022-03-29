@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import Authentication from "./routes/auth/Authentication.jsx";
 import Home from "./routes/home/Home.jsx";
@@ -14,6 +15,7 @@ import {
 } from "./utils/firebase/firebase.js";
 
 const App = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
