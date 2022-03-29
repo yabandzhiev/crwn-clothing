@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import ProductCard from "../product-card/ProductCard.jsx";
 
 import {
