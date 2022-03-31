@@ -1,6 +1,5 @@
 import CATEGORIES_TYPES from "./categoryTypes.js";
 
-import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.js";
 import { createAction } from "../../utils/reducer/reducer.js";
 
 export const fetchCategoriesStart = () =>
@@ -11,14 +10,3 @@ export const fetchCategoriesSuccess = (categoriesArray) =>
 
 export const fetchCategoriesFailed = (error) =>
   createAction(CATEGORIES_TYPES.FETCH_CATEGORIES_FAILED, error);
-
-//async thunk
-export const fetchCategoriesAsync = () => async (dispatch) => {
-  dispatch(fetchCategoriesStart());
-  try {
-    const categoriesArray = await getCategoriesAndDocuments("categories");
-    dispatch(fetchCategoriesSuccess(categoriesArray));
-  } catch (error) {
-    dispatch(fetchCategoriesFailed(error));
-  }
-};
