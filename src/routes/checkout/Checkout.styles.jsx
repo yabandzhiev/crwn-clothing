@@ -25,6 +25,13 @@ export const HeaderBlock = styled.div`
   }
 `;
 
+export const ClearCart = styled.span`
+  margin-left: auto;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+`;
+
 export const Total = styled.span`
   margin-top: 30px;
   margin-left: auto;
