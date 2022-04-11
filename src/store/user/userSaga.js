@@ -1,6 +1,6 @@
 import { takeLatest, put, all, call } from "redux-saga/effects";
 
-import USER_ACTION_TYPES from "./userTypes.js";
+import USER_ACTION_TYPES from "./userTypes";
 import {
   signInSuccess,
   signInFailed,
@@ -8,7 +8,7 @@ import {
   signUpFailed,
   signOutSuccess,
   signOutFailed,
-} from "./userActions.js";
+} from "./userActions";
 
 import {
   getCurrentUser,
@@ -17,7 +17,7 @@ import {
   signInAuthUserWithEmailAndPassword,
   createAuthUserWithEmailAndPassword,
   signOutUser,
-} from "../../utils/firebase/firebase.js";
+} from "../../utils/firebase/firebase";
 
 export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
   try {
