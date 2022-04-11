@@ -19,6 +19,8 @@ import {
   getDocs,
 } from "firebase/firestore";
 
+import { Category } from "../../store/categories/categoryTypes";
+
 // Web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD3CT7km3egqBYDuNAGzF-3w5IVtmyTZwI",
@@ -43,7 +45,14 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
 //Initialize Firestore DB
 export const db = getFirestore();
 
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+export type ObjectToAdd = {
+  title: string;
+};
+
+export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
+  collectionKey: string,
+  objectsToAdd: T[]
+): Promise<void> => {
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
 
@@ -55,12 +64,12 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
   await batch.commit();
 };
 
-export const getCategoriesAndDocuments = async () => {
+export const getCategoriesAndDocuments = async (): Promise<Category[]> => {
   const collectionRef = collection(db, "categories");
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data() as Category);
 };
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation) => {
