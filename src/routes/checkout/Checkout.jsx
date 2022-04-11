@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { selectCartItems, selectCartTotal } from "../../store/cart/cartSelector.js";
-import CheckoutItem from "../../components/checkout-item/CheckoutItem.jsx";
-import PaymentForm from "../../components/payment-form/PaymentForm.jsx";
+import { selectCartItems, selectCartTotal } from "../../store/cart/cartSelector";
+import CheckoutItem from "../../components/checkout-item/CheckoutItem";
+import PaymentForm from "../../components/payment-form/PaymentForm";
 
-import { clearCart } from "../../store/cart/cartAction.js";
+import { clearCart } from "../../store/cart/cartAction";
 
 import {
   CheckoutContainer,
@@ -12,7 +12,7 @@ import {
   HeaderBlock,
   Total,
   ClearCart,
-} from "./Checkout.styles.jsx";
+} from "./Checkout.styles";
 
 const Checkout = () => {
   const dispatch = useDispatch();

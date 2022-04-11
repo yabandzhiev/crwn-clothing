@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import FormInput from "../form-input/FormInput.jsx";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/Button.jsx";
+import FormInput from "../form-input/FormInput";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
 
-import { googleSignInStart, emailSignInStart } from "../../store/user/userActions.js";
+import { googleSignInStart, emailSignInStart } from "../../store/user/userActions";
 
-import { SignInContainer, ButtonsContainer } from "./SignInForm.styles.jsx";
+import { SignInContainer, ButtonsContainer } from "./SignInForm.styles";
 
 const defaultFormFields = {
   email: "",

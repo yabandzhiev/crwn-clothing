@@ -1,19 +1,19 @@
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { selectCartOpen } from "../../store/cart/cartSelector.js";
-import CartIcon from "../../components/cart-icon/CartIcon.jsx";
-import CartDropdown from "../../components/cart-dropdown/CartDropdown.jsx";
+import { selectCartOpen } from "../../store/cart/cartSelector";
+import CartIcon from "../../components/cart-icon/CartIcon";
+import CartDropdown from "../../components/cart-dropdown/CartDropdown";
 import { ReactComponent as CrownLogo } from "../../assets/crown.svg";
-import { selectCurrentUser } from "../../store/user/userSelector.js";
+import { selectCurrentUser } from "../../store/user/userSelector";
 
 import {
   NavigationContainer,
   LogoContainerLink,
   NavLinks,
   NavLink,
-} from "./Navigation.styles.jsx";
-import { signOutStart } from "../../store/user/userActions.js";
+} from "./Navigation.styles";
+import { signOutStart } from "../../store/user/userActions";
 
 const Navigation = () => {
   const dispatch = useDispatch();

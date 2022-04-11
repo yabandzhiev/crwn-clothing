@@ -2,16 +2,12 @@ import { useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSelector, useDispatch } from "react-redux";
 
-import { selectCartTotal } from "../../store/cart/cartSelector.js";
-import { selectCurrentUser } from "../../store/user/userSelector.js";
-import { BUTTON_TYPE_CLASSES } from "../button/Button.jsx";
-import { clearCart } from "../../store/cart/cartAction.js";
+import { selectCartTotal } from "../../store/cart/cartSelector";
+import { selectCurrentUser } from "../../store/user/userSelector";
+import { BUTTON_TYPE_CLASSES } from "../button/Button";
+import { clearCart } from "../../store/cart/cartAction";
 
-import {
-  PaymentFormContainer,
-  FormContainer,
-  PaymentButton,
-} from "./PaymentForm.styles.jsx";
+import { PaymentFormContainer, FormContainer, PaymentButton } from "./PaymentForm.styles";
 
 const PaymentForm = () => {
   const stripe = useStripe();

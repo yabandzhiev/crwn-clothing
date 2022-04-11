@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import ProductCard from "../../components/product-card/ProductCard.jsx";
+import ProductCard from "../../components/product-card/ProductCard";
 import {
   selectCategoriesMap,
   selectCategoriesIsLoading,
-} from "../../store/categories/categorySelector.js";
-import Spinner from "../../components/spinner/Spinner.jsx";
+} from "../../store/categories/categorySelector.ts";
+import Spinner from "../../components/spinner/Spinner";
 
-import { CategoryContainer, CategoryTitle } from "./Category.styles.jsx";
+import { CategoryContainer, CategoryTitle } from "./Category.styles";
 
 const Category = () => {
   const { category } = useParams();
