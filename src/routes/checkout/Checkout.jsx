@@ -42,7 +42,11 @@ const Checkout = () => {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <ClearCart onClick={clearCartHandler}>Clear Cart</ClearCart>
+      {cartItems.length > 0 ? (
+        <ClearCart onClick={clearCartHandler}>Clear Cart</ClearCart>
+      ) : (
+        ""
+      )}
       <Total>Total: ${cartTotal}</Total>
       <PaymentForm />
     </CheckoutContainer>
