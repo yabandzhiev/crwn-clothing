@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { checkUserSession } from "./store/user/userActions";
 import Spinner from "./components/spinner/Spinner";
+import { LoginRouteGuard } from "./routes/routeGuards/LoginRouteGuard";
 
 const Home = lazy(() => import("./routes/home/Home"));
 const Authentication = lazy(() => import("./routes/auth/Authentication"));
@@ -23,7 +24,9 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="shop/*" element={<Shop />} />
-          <Route path="auth" element={<Authentication />} />
+          <Route element={<LoginRouteGuard />}>
+            <Route path="auth" element={<Authentication />} />
+          </Route>
           <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
