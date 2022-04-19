@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectCartItems, selectCartTotal } from "../../store/cart/cartSelector";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
 import PaymentForm from "../../components/payment-form/PaymentForm";
+import { BUTTON_TYPE_CLASSES } from "../../components/button/Button";
 
 import { clearCart } from "../../store/cart/cartAction";
 
@@ -43,7 +44,9 @@ const Checkout = () => {
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       {cartItems.length > 0 ? (
-        <ClearCart onClick={clearCartHandler}>Clear Cart</ClearCart>
+        <ClearCart buttonType={BUTTON_TYPE_CLASSES.inverted} onClick={clearCartHandler}>
+          Clear Cart
+        </ClearCart>
       ) : (
         ""
       )}

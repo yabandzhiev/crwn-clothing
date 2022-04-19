@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../../components/button/Button";
 
 export const CheckoutContainer = styled.div`
   width: 55%;
@@ -7,6 +8,10 @@ export const CheckoutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+
+  @media screen and (max-width: 800px) {
+    width: 80%;
+  }
 `;
 
 export const CheckoutHeader = styled.div`
@@ -23,13 +28,22 @@ export const HeaderBlock = styled.div`
   &:last-child {
     width: 8%;
   }
+
+  @media screen and (max-width: 800px) {
+    width: auto;
+  }
 `;
 
-export const ClearCart = styled.span`
+export const ClearCart = styled(Button)`
   margin-left: auto;
-  font-size: 20px;
   color: red;
   cursor: pointer;
+
+  @media screen and (max-width: 800px) {
+    min-width: unset;
+    margin-top: 10px;
+    padding: 0 15px;
+  }
 `;
 
 export const Total = styled.span`
