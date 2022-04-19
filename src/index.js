@@ -10,10 +10,11 @@ import App from "./App";
 import { store, persistor } from "./store/store";
 import { stripePromise } from "./utils/stripe/stripe";
 
-import "./index.scss";
+import { GlobalStyle } from "./globalStyles";
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
