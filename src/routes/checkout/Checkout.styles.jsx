@@ -40,9 +40,7 @@ export const ClearCart = styled(Button)`
   cursor: pointer;
 
   @media screen and (max-width: 800px) {
-    min-width: unset;
     margin-top: 10px;
-    padding: 0 15px;
   }
 `;
 
