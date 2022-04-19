@@ -7,6 +7,7 @@ import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
 import { googleSignInStart, emailSignInStart } from "../../store/user/userActions";
 
 import { SignInContainer, ButtonsContainer } from "./SignInForm.styles";
+import { Navigate } from "react-router-dom";
 
 const defaultFormFields = {
   email: "",
@@ -33,7 +34,7 @@ const SignInForm = () => {
     try {
       dispatch(emailSignInStart(email, password));
 
-      resetFormFields();
+      <Navigate to="/" />;
     } catch (error) {
       alert("Email or password are not valid");
     }

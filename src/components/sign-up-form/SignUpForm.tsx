@@ -8,6 +8,7 @@ import Button from "../button/Button";
 import { signUpStart } from "../../store/user/userActions";
 
 import { SignUpContainer } from "./SignUpForm.styles";
+import { Navigate } from "react-router-dom";
 
 const defaultFormFields = {
   displayName: "",
@@ -29,13 +30,13 @@ const SignUpForm = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (password !== confirmPassword) {
-      alert("passwords dont match");
+      alert("Passwords dont match");
       return;
     }
     try {
       dispatch(signUpStart(email, password, displayName));
 
-      resetFormFields();
+      <Navigate to="/" />;
     } catch (error) {
       if ((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS) {
         alert("Cannot create user, email already in use");
